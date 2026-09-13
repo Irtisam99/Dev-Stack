@@ -14,8 +14,8 @@ const Hero = () => {
                         compare them side by side, and put together the stack that fits your
                         next project.
                     </p>
-                    <div className='flex justify-center md:flex gap-2 mt-7'>
-                        <button className='w-[170px] h=[40px] rounded-md bg-linear-to-r from-[#F97316] to-[#EC4899] text-[14px] font-medium text-white'>
+                    <div className='flex justify-center md:justify-start flex gap-2 mt-7 '>
+                        <button className='w-[170px] h-40px] rounded-md bg-linear-to-r from-[#F97316] to-[#EC4899] text-[14px] font-medium text-white'>
                             Explore Technologies
                         </button>
                         <button className='w-[170px] h-[50px] rounded-md border border-[#e2e8f0] bg-white text-[14px] font-medium text-[#475569]'>
