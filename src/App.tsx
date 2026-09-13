@@ -3,6 +3,7 @@ import Nav from './Nav'
 import Hero from './Hero'
 import type { ITechnology } from './types/technologyType'
 import Technologies from './Technologies'
+import { toast, ToastContainer } from 'react-toastify'
 
 
 const technologiesFetch=async():Promise<ITechnology[]>=>{
@@ -21,34 +22,52 @@ function App() {
 
 
   // ADD TO STACK
-  const addToStack = (technology: ITechnology) => {
-  setSeletectedTechnologies((previousTechnologies) => {
-    const alreadyExists = previousTechnologies.some(
-      (selectedTechnology) =>
-        selectedTechnology.id === technology.id
-    );
+const addToStack = (technology: ITechnology) => {
+  const alreadyExists = selectedTechnologies.some(
+    (selectedTechnology) =>
+      selectedTechnology.id === technology.id
+  );
 
-    if (alreadyExists) {
-      return previousTechnologies;
-    }
+  if (alreadyExists) {
+    toast.warning(`${technology.name} is already in your stack!`);
+    return;
+  }
 
-    return [...previousTechnologies, technology];
-  });
+  setSeletectedTechnologies((previousTechnologies) => [
+    ...previousTechnologies,
+    technology,
+  ]);
+
+  toast.success(`${technology.name} added to your stack!`);
 };
 
   // Remove from stack
 
-    const removeFromStack = (technologyId: string) => {
-    setSeletectedTechnologies((previousTechnologies) =>
-      previousTechnologies.filter(
-        (technology) => technology.id !== technologyId
-      )
-    );
-  };
+// REMOVE FROM STACK
+// REMOVE FROM STACK
+const removeFromStack = (technologyId: string) => {
+  const technology = selectedTechnologies.find(
+    (technology) => technology.id === technologyId
+  );
+
+  if (!technology) {
+    return;
+  }
+
+  setSeletectedTechnologies((previousTechnologies) =>
+    previousTechnologies.filter(
+      (technology) => technology.id !== technologyId
+    )
+  );
+
+  toast.info(`${technology.name} removed from your stack.`);
+};
 
   // Remove All
     const removeAllFromStack = () => {
     setSeletectedTechnologies([]);
+    toast.success("All technologies removed from your stack.");
+
   };
 
 
@@ -66,7 +85,7 @@ function App() {
 
              />
         </Suspense>
-    
+    <ToastContainer></ToastContainer>
     </>
   )
 }
