@@ -1,8 +1,9 @@
 import hero from './assets/banner-stack.png'
 const Hero = () => {
     return (
-                <div className="mt-[50px]">
-            <div className='flex container mx-auto justify-between min-h-[360px] px-2'>
+            
+            <div className="-mt-[20px] md:mt-[50px] container mx-auto">
+                <div className="flex flex-col justify-center items-center text-center md:flex-row md:items-start md:text-left md:justify-between container mx-auto min-h-[360px] px-2">
                 <div className='mt-20'>
                     <h1 className='font-bold text-[60px] leading-[1.05] tracking-tight'>
                         <span className='block text-[#111827]'>Build your ideal</span>
@@ -13,7 +14,7 @@ const Hero = () => {
                         compare them side by side, and put together the stack that fits your
                         next project.
                     </p>
-                    <div className='flex gap-2 mt-7'>
+                    <div className='flex justify-center md:flex gap-2 mt-7'>
                         <button className='w-[170px] h=[40px] rounded-md bg-linear-to-r from-[#F97316] to-[#EC4899] text-[14px] font-medium text-white'>
                             Explore Technologies
                         </button>

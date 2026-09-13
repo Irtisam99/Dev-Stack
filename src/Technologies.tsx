@@ -14,7 +14,7 @@ const Technologies = ({technologyPromise,selectedTechnologies,addToStack,removeF
     
 
     return (
-    <section className="bg-white px-6 py-16 sm:px-8 lg:px-14">
+    <section className="bg-white px-6 py-16 sm:px-8 lg:px-14 ">
       <div className="container mx-auto">
         <div className="mb-7">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">

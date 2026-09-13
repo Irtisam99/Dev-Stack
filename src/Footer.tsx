@@ -5,7 +5,7 @@ const Footer = () => {
             <div className="divider mb-15 border-white opacity-50"></div>
 
             <div className='md:grid grid-cols-2 container mx-auto'>
-                 <div className='flex flex-col justify-center items-center space-y-3 text-center md:space-y-3 '>
+                 <div className='flex flex-col justify-center items-center space-y-3 text-center md:space-y-3 md:items-start md:text-left'>
                     <img src={logo} alt="" />
                     <p className='max-w-130 text-gray-500'>Curated tools, technologies, and resources for developers building
                         modern software.</p>
