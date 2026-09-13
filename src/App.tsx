@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import Nav from './Nav'
 import Hero from './Hero'
 import type { ITechnology } from './types/technologyType'
+import Technologies from './Technologies'
 
 
 const technologiesFetch=async():Promise<ITechnology[]>=>{
@@ -18,6 +19,9 @@ function App() {
     <>
         <Nav></Nav>
         <Hero></Hero>
+        <Suspense fallback={<h2>Loading....</h2>}>
+             <Technologies technologyPromise={technologyPromise}></Technologies>
+        </Suspense>
     
     </>
   )

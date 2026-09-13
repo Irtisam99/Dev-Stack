@@ -3,8 +3,8 @@ import logo from './assets/logo-text.png'
 
 const Nav = () => {
     return (
-        <div className='mt-2 sticky top-2 z-50'>
-            <nav className='flex justify-between border-amber-400 border items-center container mx-auto '>
+        <div className='sticky top-0 z-50 bg-white'>
+            <nav className='flex justify-between border-amber-400 border items-center container mx-auto'>
                 
                 <GiHamburgerMenu className='md:hidden size-8'/>
 
