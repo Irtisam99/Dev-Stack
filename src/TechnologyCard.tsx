@@ -2,8 +2,10 @@ import type { ITechnology } from "./types/technologyType";
 
 interface ITechnologyCardProps {
   technology: ITechnology;
+  isAdded: boolean;
+  addToStack: (technology: ITechnology) => void;
 }
-const TechnologyCard = ({technology}:ITechnologyCardProps) => {
+const TechnologyCard = ({technology,isAdded,addToStack}:ITechnologyCardProps) => {
     return (
         <article className="flex min-h-[230px] flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div className="flex items-start justify-between">
@@ -41,13 +43,19 @@ const TechnologyCard = ({technology}:ITechnologyCardProps) => {
             </span>
         </div>
 
-        <button
-            type="button"
-            className="mt-3 w-full rounded-md bg-slate-950 py-2 text-[10px] font-medium text-white transition hover:bg-slate-800"
-        >
-            Add to Stack
-        </button>
-        </article>
+      <button
+        type="button"
+        onClick={() => addToStack(technology)}
+        disabled={isAdded}
+        className={`mt-3 w-full rounded-md py-2 text-[10px] font-medium transition ${
+          isAdded
+            ? "cursor-not-allowed bg-slate-200 text-slate-500"
+            : "bg-slate-950 text-white hover:bg-slate-800"
+        }`}
+      >
+        {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+      </button>
+    </article>
     );
 };
 
