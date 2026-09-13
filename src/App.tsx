@@ -4,6 +4,7 @@ import Hero from './Hero'
 import type { ITechnology } from './types/technologyType'
 import Technologies from './Technologies'
 import { toast, ToastContainer } from 'react-toastify'
+import Footer from './Footer'
 
 
 const technologiesFetch=async():Promise<ITechnology[]>=>{
@@ -85,6 +86,7 @@ const removeFromStack = (technologyId: string) => {
 
              />
         </Suspense>
+        <Footer></Footer>
     <ToastContainer></ToastContainer>
     </>
   )

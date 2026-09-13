@@ -1,7 +1,7 @@
 import hero from './assets/banner-stack.png'
 const Hero = () => {
     return (
-                <div className="border-teal-700 border mt-[60px]">
+                <div className="mt-[50px]">
             <div className='flex container mx-auto justify-between min-h-[360px] px-2'>
                 <div className='mt-20'>
                     <h1 className='font-bold text-[60px] leading-[1.05] tracking-tight'>
